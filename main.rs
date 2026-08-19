@@ -1,8 +1,9 @@
-use std::io;
+use std::io::{self, BufRead};
 
 fn main() {
-    let mut buffer = String::new();
-    io::stdin().read_line(&mut buffer).unwrap();
+    let mut iter = io::stdin().lock().lines();
+    let name = iter.next().unwrap().unwrap();
+    let age: i32 = iter.next().unwrap().unwrap().trim().parse().unwrap();
 
-    println!("{}", buffer.to_uppercase());
+    println!("Hi, {name}! You are {age} years old.")
 }
