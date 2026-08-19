@@ -5,5 +5,5 @@ fn main() {
     let name = iter.next().unwrap().unwrap();
     let age: i32 = iter.next().unwrap().unwrap().trim().parse().unwrap();
 
-    println!("Hi, {name}! You are {age} years old.")
+    println!("Hi, {name}! You are {age} years old.");
 }
