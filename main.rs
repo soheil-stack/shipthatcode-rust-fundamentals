@@ -1,7 +1,8 @@
 use std::io::{self, BufRead};
 
 fn main() {
-    let mut iter = io::stdin().lock().lines();
+    let stdin = io::stdin();
+    let mut iter = stdin.lock().lines();
     let name = iter.next().unwrap().unwrap();
     let age: i32 = iter.next().unwrap().unwrap().trim().parse().unwrap();
 
