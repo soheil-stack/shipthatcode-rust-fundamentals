@@ -2,7 +2,7 @@ use std::io::{self, BufRead};
 
 fn main() {
     let stdin = io::stdin();
-    let num: i32 = stdin
+    let n: i32 = stdin
         .lock()
         .lines()
         .next()
@@ -21,10 +21,10 @@ fn main() {
     //     println!("{num}");
     // }
 
-    match (num % 3 == 0, num % 5 == 0) {
+    match (n % 3 == 0, n % 5 == 0) {
         (true, true) => println!("FizzBuzz"),
         (true, false) => println!("Fizz"),
         (false, true) => println!("Buzz"),
-        (false, false) => println!("{num}"),
+        (false, false) => println!("{n}"),
     };
 }
