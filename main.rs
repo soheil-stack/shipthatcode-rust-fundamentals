@@ -8,6 +8,7 @@ fn main() {
         .next()
         .unwrap()
         .unwrap()
+        .trim()
         .parse()
         .unwrap();
 
