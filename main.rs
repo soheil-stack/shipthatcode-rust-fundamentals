@@ -1,8 +1,15 @@
-use std::io;
+use std::io::{self, BufRead};
 
 fn main() {
-    let mut iter = io::stdin().lines();
-    let num: i32 = iter.next().unwrap().unwrap().parse().unwrap();
+    let stdin = io::stdin();
+    let num: i32 = stdin
+        .lock()
+        .lines()
+        .next()
+        .unwrap()
+        .unwrap()
+        .parse()
+        .unwrap();
 
     // if num % 15 == 0 {
     //     println!("FizzBuzz");
