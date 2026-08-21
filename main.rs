@@ -21,12 +21,10 @@ fn main() {
     //     println!("{num}");
     // }
 
-    let result = match (num % 3 == 0, num % 5 == 0) {
-        (true, true) => "FizzBuzz",
-        (true, false) => "Fizz",
-        (false, true) => "Buzz",
-        (false, false) => &num.to_string(),
+    match (num % 3 == 0, num % 5 == 0) {
+        (true, true) => println!("FizzBuzz"),
+        (true, false) => println!("Fizz"),
+        (false, true) => println!("Buzz"),
+        (false, false) => println!("{num}"),
     };
-
-    println!("{result}")
 }
