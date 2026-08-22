@@ -2,20 +2,11 @@ use std::io::{self, BufRead};
 
 fn main() {
     let stdin = io::stdin();
-    let n: i32 = stdin
-        .lock()
-        .lines()
-        .next()
-        .unwrap()
-        .unwrap()
-        .trim()
-        .parse()
-        .unwrap();
+    let line = stdin.lock().lines().next().unwrap().unwrap();
 
-    let result = square(n);
-    println!("{}", result);
+    println!("{}", count(&line));
 }
 
-fn square(n: i32) -> i32 {
-    n * n
+fn count(s: &str) -> usize {
+    s.len()
 }
