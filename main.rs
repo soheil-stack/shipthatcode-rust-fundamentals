@@ -2,7 +2,7 @@ use std::io::{self, BufRead};
 
 fn main() {
     let stdin = io::stdin();
-    let n: i64 = stdin
+    let n: i32 = stdin
         .lock()
         .lines()
         .next()
@@ -12,10 +12,10 @@ fn main() {
         .parse()
         .unwrap();
 
-    let mut sum: i64 = 0;
-    for i in 1..=n {
-        sum += i;
-    }
+    let result = square(n);
+    println!("{}", result);
+}
 
-    println!("{}", sum);
+fn square(n: i32) -> i32 {
+    n * n
 }
